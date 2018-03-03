@@ -1,4 +1,4 @@
---
+---
   - hosts: database
     become: true
     tasks:
