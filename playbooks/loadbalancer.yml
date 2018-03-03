@@ -9,7 +9,7 @@
       service: name=nginx state=started enabled=yes
 
     - name: configure nginx site
-      template: src=templates/nginx.conf.j2 dest=/etc/nginx/sites-available/demo mode=0644
+      template: src=/home/ansible/work/reddyB/templates/nginx.conf.j2 dest=/etc/nginx/sites-available/demo mode=0644
       notify: restart nginx
 
     - name: de-activate default nginx site
