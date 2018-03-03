@@ -14,7 +14,7 @@
         service: name=apache2 state=started enabled=yes
 
       - name: ensure mod_wsgi started
-        apache2_module: state=present enabled=wsgi
+        apache2_module: state=present name=wsgi
         notify: restart apache2
 
     handlers:
