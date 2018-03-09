@@ -28,7 +28,10 @@
 
 - hosts: control
   tasks:
-
+    - name: verify end-to-end index response
+      uri: url=http://{{item}} return_content=yes
+      with_items: groups.loadbalancer
+      register: lb_index
 
     - fail: msg="index failed to return content"
       when: "'Hello, from sunny' not in item.content"
